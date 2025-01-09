@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-demande d'éligibilité</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --background-color: #f9fafb;
+            --input-border-color: #e5e7eb;
+            --warning-color: #fbbf24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .header img {
+            max-width: 230px;
+            height: auto;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .attention-banner {
+            display: flex;
+            align-items: center;
+            background-color: #fffbea;
+            border: 1px solid var(--warning-color);
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: #744210;
+        }
+
+        .attention-banner svg {
+            margin-right: 0.5rem;
+            width: 24px;
+            height: 24px;
+            color: var(--warning-color);
+        }
+
+        .form-group {
+            margin-bottom: 0.75rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid var(--input-border-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-radio-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.3rem;
+        }
+
+        .form-radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .form-radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 0.3rem;
+            accent-color: var(--primary-color);
+        }
+
+        .privacy-checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-checkbox input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .privacy-checkbox label {
+            font-size: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--input-border-color);
+        }
+
+        .footer img {
+            width: 90px;
+            height: auto;
+            margin-top: 0.5rem;
+        }
+
+        .footer p {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .form-radio-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.ibb.co/M8w9XQv/Log.png" alt="Logo Principal">
+        </div>
+
+        <h2 class="form-title">Pré-demande d'éligibilité aux aides exceptionnelles</h2>
+        <p class="form-subtitle">
+            <strong>Ces aides sont exclusivement réservées aux propriétaires en résidence principale.</strong>
+        </p>
+
+        <div class="attention-banner">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            Attention : une seule demande par foyer fiscal sera traitée
+        </div>
+
+        <form action="https://your-server-endpoint.com" method="POST">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" required>
+            </div>
+
+            <div class="form-group">
+                <label for="code_postal">Code postal</label>
+                <input type="text" id="code_postal" name="code_postal" required>
+            </div>
+
+            <div class="form-group">
+                <label>Type de travaux envisagés :</label>
+                <div class="form-radio-group">
+                    <label><input type="radio" name="travaux" value="Toiture" required> Toiture</label>
+                    <label><input type="radio" name="travaux" value="Isolation des murs extérieurs" required> Isolation ext.</label>
+                    <label><input type="radio" name="travaux" value="Isolation des murs intérieurs" required> Isolation int.</label>
+                    <label><input type="radio" name="travaux" value="Isolation des rampants" required> Isolation rampants</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="text" id="telephone" name="telephone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="revenu_fiscal">Revenu fiscal de référence</label>
+                <input type="number" id="revenu_fiscal" name="revenu_fiscal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="parts">Nombre de parts déclarées</label>
+                <input type="number" id="parts" name="parts" required>
+            </div>
+
+            <div class="privacy-checkbox">
+                <input type="checkbox" id="politique_confidentialite" name="politique_confidentialite" required>
+                <label for="politique_confidentialite">
+                    J'accepte la politique de confidentialité et je consens au traitement de mes données personnelles conformément aux dispositions légales en vigueur.
+                </label>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>Bureau de la Transition Énergétique et Solidaire<br>
+            Tour Séquoia, 1 place Carpeaux, 92800 Puteaux<br>
+            <a href="https://www.ecologie.gouv.fr/" target="_blank">https://www.ecologie.gouv.fr/</a></p>
+            <img src="https://i.ibb.co/gzSKx9x/rep.png" alt="Logo Secondaire">
+        </div>
+    </div>
+</body>
+</html>
